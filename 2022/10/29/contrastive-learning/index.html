@@ -5,37 +5,38 @@
   
 
   
-  <title>contrastive_learning | Hexo</title>
+  <title>contrastive_learning | GraduateSupportTeam</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="对抗损失自监督对抗损失网络 损失函数 $\cdot$ 代表点积 $i$是一个样本，$j(i)$是与$i$来自同一分布的样本，$A(i)$是所有样本 🥥 比如： $i$和$j(i)$来自同一张图片的增强图片 i.e. 同一分布 Softmax 形象解释：在特征空间，相同label的特征被拉近，不同的特征被拉开 特点自监督：不需要label 预训练：可以提升性能 因为没有label，所以（边牧实际上">
+  <meta name="description" content="对抗损失自监督对抗损失网络   损失函数 $\cdot$ 代表点积 $i$是一个样本，$j(i)$是与$i$来自同一分布的样本，$A(i)$是所有样本 🥥 比如： $i$和$j(i)$来自同一张图片的增强图片 i.e. 同一分布 Softmax 形象解释：在特征空间，相同label的特征被拉近，不同的特征被拉开 特点自监督：不需要label 预训练：可以提升性能 因为没有label，所以（边牧实">
 <meta property="og:type" content="article">
 <meta property="og:title" content="contrastive_learning">
 <meta property="og:url" content="https://graduatesupportteam.github.io/main/2022/10/29/contrastive-learning/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="对抗损失自监督对抗损失网络 损失函数 $\cdot$ 代表点积 $i$是一个样本，$j(i)$是与$i$来自同一分布的样本，$A(i)$是所有样本 🥥 比如： $i$和$j(i)$来自同一张图片的增强图片 i.e. 同一分布 Softmax 形象解释：在特征空间，相同label的特征被拉近，不同的特征被拉开 特点自监督：不需要label 预训练：可以提升性能 因为没有label，所以（边牧实际上">
+<meta property="og:site_name" content="GraduateSupportTeam">
+<meta property="og:description" content="对抗损失自监督对抗损失网络   损失函数 $\cdot$ 代表点积 $i$是一个样本，$j(i)$是与$i$来自同一分布的样本，$A(i)$是所有样本 🥥 比如： $i$和$j(i)$来自同一张图片的增强图片 i.e. 同一分布 Softmax 形象解释：在特征空间，相同label的特征被拉近，不同的特征被拉开 特点自监督：不需要label 预训练：可以提升性能 因为没有label，所以（边牧实">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://graduatesupportteam.github.io/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_23.02.59.png">
-<meta property="og:image" content="https://graduatesupportteam.github.io/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-27_18.09.29.png">
-<meta property="og:image" content="https://graduatesupportteam.github.io/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_21.40.03.png">
-<meta property="og:image" content="https://graduatesupportteam.github.io/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_22.44.28.png">
-<meta property="og:image" content="https://graduatesupportteam.github.io/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_19.52.30.png">
-<meta property="og:image" content="https://graduatesupportteam.github.io/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_19.56.51.png">
-<meta property="og:image" content="https://graduatesupportteam.github.io/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_20.21.48.png">
-<meta property="og:image" content="https://graduatesupportteam.github.io/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_20.22.44.png">
-<meta property="og:image" content="https://graduatesupportteam.github.io/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_21.07.03.png">
-<meta property="og:image" content="https://graduatesupportteam.github.io/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_21.15.52.png">
-<meta property="og:image" content="https://graduatesupportteam.github.io/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_21.19.59.png">
-<meta property="og:image" content="https://graduatesupportteam.github.io/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_21.21.29.png">
-<meta property="og:image" content="https://graduatesupportteam.github.io/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_21.22.45.png">
-<meta property="og:image" content="https://graduatesupportteam.github.io/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_20.14.10.png">
-<meta property="og:image" content="https://graduatesupportteam.github.io/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_20.16.59.png">
+<meta property="og:image" content="https://graduatesupportteam.github.io/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_23.02.59.jpg">
+<meta property="og:image" content="https://graduatesupportteam.github.io/main/.io//2022/10/29/contrastive-learning/21.png">
+<meta property="og:image" content="https://graduatesupportteam.github.io/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-27_18.09.29.png">
+<meta property="og:image" content="https://graduatesupportteam.github.io/main/.io//contrastive_learning/21.png">
+<meta property="og:image" content="https://graduatesupportteam.github.io/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_22.44.28.png">
+<meta property="og:image" content="https://graduatesupportteam.github.io/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_19.52.30.png">
+<meta property="og:image" content="https://graduatesupportteam.github.io/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_19.56.51.png">
+<meta property="og:image" content="https://graduatesupportteam.github.io/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_20.21.48.png">
+<meta property="og:image" content="https://graduatesupportteam.github.io/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_20.22.44.png">
+<meta property="og:image" content="https://graduatesupportteam.github.io/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_21.07.03.png">
+<meta property="og:image" content="https://graduatesupportteam.github.io/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_21.15.52.png">
+<meta property="og:image" content="https://graduatesupportteam.github.io/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_21.19.59.png">
+<meta property="og:image" content="https://graduatesupportteam.github.io/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_21.21.29.png">
+<meta property="og:image" content="https://graduatesupportteam.github.io/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_21.22.45.png">
+<meta property="og:image" content="https://graduatesupportteam.github.io/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_20.14.10.png">
+<meta property="og:image" content="https://graduatesupportteam.github.io/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_20.16.59.png">
 <meta property="article:published_time" content="2022-10-28T16:18:23.000Z">
-<meta property="article:modified_time" content="2022-10-28T16:22:21.044Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:modified_time" content="2022-10-29T05:00:30.744Z">
+<meta property="article:author" content="谱分析实验室">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://graduatesupportteam.github.io/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_23.02.59.png">
+<meta name="twitter:image" content="https://graduatesupportteam.github.io/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_23.02.59.jpg">
   
-    <link rel="alternate" href="/main/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/main/atom.xml" title="GraduateSupportTeam" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -56,7 +57,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/main/" id="logo">Hexo</a>
+        <a href="/main/" id="logo">GraduateSupportTeam</a>
       </h1>
       
     </div>
@@ -104,8 +105,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="对抗损失"><a href="#对抗损失" class="headerlink" title="对抗损失"></a>对抗损失</h1><h2 id="自监督对抗损失"><a href="#自监督对抗损失" class="headerlink" title="自监督对抗损失"></a>自监督对抗损失</h2><h3 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h3><p><img src="/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_23.02.59.png" alt="截屏2022-10-28 23.02.59.png"></p>
-<h3 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h3><p><img src="/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-27_18.09.29.png" alt="截屏2022-10-27 18.09.29.png"></p>
+        <h1 id="对抗损失"><a href="#对抗损失" class="headerlink" title="对抗损失"></a>对抗损失</h1><h2 id="自监督对抗损失"><a href="#自监督对抗损失" class="headerlink" title="自监督对抗损失"></a>自监督对抗损失</h2><h3 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h3><p><img src="/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_23.02.59.jpg" alt="截屏2022-10-28 23.02.59.png"></p>
+<img src="/main/.io//2022/10/29/contrastive-learning/21.png" class title="This is an test image">
+
+<h3 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h3><p><img src="/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-27_18.09.29.png" alt="截屏2022-10-27 18.09.29.png"></p>
 <p>$\cdot$ 代表点积</p>
 <p>$i$是一个样本，$j(i)$是与$i$来自同一分布的样本，$A(i)$是所有样本</p>
 <p>🥥 比如：</p>
@@ -117,18 +120,18 @@
 <p>因为没有label，所以（边牧实际上是负样本）经过训练会被推到远离当前空间的位置，为后面的训练增加难度</p>
 <p><strong>优点</strong>：生成unlabeled samples is cheap</p>
 <p><strong>缺点</strong>：如果同一label有不同的样本（来自同一样本</p>
-<p><img src="/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_21.40.03.png" alt="截屏2022-10-28 21.40.03.png"></p>
-<h2 id="改进👇"><a href="#改进👇" class="headerlink" title="改进👇"></a>改进👇</h2><h3 id="1-有监督的"><a href="#1-有监督的" class="headerlink" title="1. 有监督的"></a>1. <strong>有监督的</strong></h3><p><img src="/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_22.44.28.png" alt="截屏2022-10-28 22.44.28.png"></p>
+<p><img src="/main/.io//contrastive_learning/21.png" alt="截屏"></p>
+<h2 id="改进👇"><a href="#改进👇" class="headerlink" title="改进👇"></a>改进👇</h2><h3 id="1-有监督的"><a href="#1-有监督的" class="headerlink" title="1. 有监督的"></a>1. <strong>有监督的</strong></h3><p><img src="/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_22.44.28.png" alt="截屏2022-10-28 22.44.28.png"></p>
 <ul>
 <li>增强不再是必要的形式</li>
 </ul>
 <h3 id="2-Loss的两种变形"><a href="#2-Loss的两种变形" class="headerlink" title="2. Loss的两种变形"></a>2. <strong>Loss的两种变形</strong></h3><p><em><strong>变形1</strong></em></p>
-<p><img src="/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_19.52.30.png" alt="截屏2022-10-28 19.52.30.png"></p>
+<p><img src="/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_19.52.30.png" alt="截屏2022-10-28 19.52.30.png"></p>
 <p>$P(i) &#x3D; {p \in A(i):\mathcal{y_p}&#x3D;{y_i}}$, 与$i$不同的positive样本的indices，$|P(i)|$是势（总个数）</p>
 <p>里面的$\sum$计算了当前样本$i$与其所有positive的对抗损失</p>
 <p>外侧的$\sum$计算了所有样本$i\in I$</p>
 <p><em><strong>变形2</strong></em></p>
-<p><img src="/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_19.56.51.png" alt="截屏2022-10-28 19.56.51.png"></p>
+<p><img src="/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_19.56.51.png" alt="截屏2022-10-28 19.56.51.png"></p>
 <p>里侧的$\sum$提到了log里</p>
 <p><strong>均具备的优点</strong></p>
 <p>（1）这种形式促使同一label的样本在特征表达上更加相似</p>
@@ -136,11 +139,11 @@
 <li><p>补充公示推导</p>
 <p>  对于变形2</p>
 <p>  对每种label的损失</p>
-<p>  <img src="/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_20.21.48.png" alt="截屏2022-10-28 20.21.48.png"></p>
-<p>  <img src="/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_20.22.44.png" alt="截屏2022-10-28 20.22.44.png"></p>
+<p>  <img src="/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_20.21.48.png" alt="截屏2022-10-28 20.21.48.png"></p>
+<p>  <img src="/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_20.22.44.png" alt="截屏2022-10-28 20.22.44.png"></p>
 <p>  $P_{ip}$ 是关于所有正负样本的可能值（在所有样本里）,$X^{in}_{ip}$仅关于正样本（在正样本中的区分）</p>
 <p>  变形1与变形2的推导结果是一样的，但是</p>
-<p>  <img src="/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_21.07.03.png" alt="截屏2022-10-28 21.07.03.png"></p>
+<p>  <img src="/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_21.07.03.png" alt="截屏2022-10-28 21.07.03.png"></p>
 <p>  变形1的$z_p$是同一label的所有正样本表达的均值，所以更鲁邦（？）</p>
 </li>
 </ul>
@@ -149,27 +152,27 @@
 <p>变形1，2作为自监督的泛化版本，利用了这种优势</p>
 <ul>
 <li><p>loss关于上层的梯度</p>
-<p>  <img src="/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_21.15.52.png" alt="截屏2022-10-28 21.15.52.png"></p>
+<p>  <img src="/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_21.15.52.png" alt="截屏2022-10-28 21.15.52.png"></p>
 <p>  $z_i$是特征，$w_i$是归一化前的结果，$z_i &#x3D; w_i&#x2F;||w_i||$</p>
-<p>  <img src="/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_21.19.59.png" alt="截屏2022-10-28 21.19.59.png"></p>
+<p>  <img src="/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_21.19.59.png" alt="截屏2022-10-28 21.19.59.png"></p>
 <p>  对于易分的样本，对总体梯度的贡献很小</p>
-<p>  <img src="/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_21.21.29.png" alt="截屏2022-10-28 21.21.29.png"></p>
+<p>  <img src="/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_21.21.29.png" alt="截屏2022-10-28 21.21.29.png"></p>
 <p>  对于不易分的样本</p>
-<p>  <img src="/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_21.22.45.png" alt="截屏2022-10-28 21.22.45.png"></p>
+<p>  <img src="/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_21.22.45.png" alt="截屏2022-10-28 21.22.45.png"></p>
 </li>
 </ul>
 <p><strong>2，3的优劣：</strong></p>
 <p>根据杰森不等式</p>
-<p><img src="/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_20.14.10.png" alt="变形2的loss 小于等于 变形1的loss"></p>
+<p><img src="/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_20.14.10.png" alt="变形2的loss 小于等于 变形1的loss"></p>
 <p>变形2的loss 小于等于 变形1的loss</p>
 <p>所以变形1的loss是变形二的上界，效果也更好</p>
-<p><img src="/main/%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_20.16.59.png" alt="在图像分类上的结果也证明了变形1优于变形2"></p>
+<p><img src="/main/.io//%E5%AF%B9%E6%8A%97%E6%8D%9F%E5%A4%B1%20f33de17eeb4e48739d6eb593414e8b58/%25E6%2588%25AA%25E5%25B1%258F2022-10-28_20.16.59.png" alt="在图像分类上的结果也证明了变形1优于变形2"></p>
 <p>在图像分类上的结果也证明了变形1优于变形2</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://graduatesupportteam.github.io/main/2022/10/29/contrastive-learning/" data-id="cl9tcyh5a0000grxtdddmdc8f" class="article-share-link">Share</a>
+      <a data-url="https://graduatesupportteam.github.io/main/2022/10/29/contrastive-learning/" data-id="cl9tggsya0000y2xtfhcx2ezi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -241,7 +244,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2022 John Doe<br>
+      &copy; 2022 谱分析实验室<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
