@@ -10,4 +10,3 @@ tags:
 
 第二行内容
 
-{% asset_img test.png 测试样例 %}
